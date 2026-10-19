@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DocuTrack</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+          href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+
+        <a href="#home" class="logo">
+            Docu<span>Track</span>
+        </a>
+
+        <i class="bx bx-menu" id="menu-icon"></i>
+
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#monitor-documents">Monitor Documents</a>
+            <a href="#system-status">System Status</a>
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <!-- Home -->
+        <section class="home" id="home">
+
+            <div class="home-content">
+
+                <h1>Welcome to DocuTrack!</h1>
+
+                <p>
+                    Monitor the documents submitted to you by the end of the day.
+                </p>
+
+                <a href="#monitor-documents" class="btn">
+                    Get Started
+                </a>
+
+            </div>
+
+
+            <!-- DocuTrack Logo -->
+            <div class="home-img">
+
+                <img
+                    src="Docu.jpg"
+                    alt="DocuTrack Logo"
+                    class="docutrack-logo"
+                >
+
+            </div>
+
+        </section>
+
+
+        <!-- Monitor Documents -->
+        <section class="monitor-documents" id="monitor-documents">
+
+            <h2>Monitor Documents</h2>
+
+            <p>
+                Enter your Tracking ID to check your document status.
+            </p>
+
+            <label for="tracking-id">Tracking ID:</label>
+
+            <br>
+
+            <input
+                type="text"
+                id="tracking-id"
+                name="Tid"
+                placeholder="e.g. Yin.676767"
+            >
+
+            <button type="button" id="search-btn">
+                Search
+            </button>
+
+            <p id="search-message"></p>
+
+        </section>
+
+
+        <!-- System Status -->
+        <section class="system-status" id="system-status">
+
+            <h2>System Status</h2>
+
+            <p id="status">System Online</p>
+
+
+            <!-- Notifications -->
+            <div class="notifications">
+
+                <h3>Notifications</h3>
+
+                <p id="notifications">
+                    No new notifications.
+                </p>
+
+            </div>
+
+
+            <!-- Submission Counts -->
+            <div class="submission-counts">
+
+                <div class="submission-status">
+                    <h3 id="scaffold">0</h3>
+                    <p>Scaffold</p>
+                </div>
+
+                <div class="submission-status">
+                    <h3 id="written-work">0</h3>
+                    <p>Written Work</p>
+                </div>
+
+                <div class="submission-status">
+                    <h3 id="excuse-letter">0</h3>
+                    <p>Excuse Letter</p>
+                </div>
+
+                <div class="submission-status">
+                    <h3 id="total-submitted">0</h3>
+                    <p>Total Submitted Documents</p>
+                </div>
+
+            </div>
+
+
+            <!-- Daily Report -->
+            <div class="daily-report">
+
+                <h2>Daily Status Report</h2>
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Tracking ID</th>
+                            <th>Document Type</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="document-table">
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

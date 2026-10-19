@@ -1,0 +1,395 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600&display=swap');
+
+/* ---------- Tokens ---------- */
+
+:root {
+    --indigo: #4b0082;
+    --indigo-deep: #36005e;
+    --alice: #f0f8ff;
+    --lavender: #e7e1f5;
+    --line: #d3c9ec;
+    --ink: #1e1433;
+    --muted: #5b5470;
+    --online: #1f7a4d;
+    --radius: 8px;
+}
+
+
+/* ---------- Base ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Lexend', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    background: var(--alice);
+    color: var(--ink);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+}
+
+:focus-visible {
+    outline: 3px solid var(--indigo);
+    outline-offset: 2px;
+}
+
+section {
+    padding: 6.5rem 5% 4rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+    line-height: 1.25;
+    color: var(--indigo);
+    margin-bottom: 0.75rem;
+}
+
+
+/* ---------- Header ---------- */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.1rem 5%;
+    background: var(--indigo);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.header :focus-visible {
+    outline-color: var(--alice);
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--alice);
+}
+
+.logo span {
+    color: #cbb6f0;
+}
+
+.navbar a {
+    margin-left: 2rem;
+    padding-bottom: 0.2rem;
+    font-size: 1rem;
+    color: var(--alice);
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    border-bottom-color: var(--alice);
+}
+
+#menu-icon {
+    display: none;
+    font-size: 2rem;
+    color: var(--alice);
+    cursor: pointer;
+}
+
+
+/* ---------- Home ---------- */
+
+.home {
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+.home-content h1 {
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    line-height: 1.15;
+    color: var(--indigo);
+}
+
+.home-content p {
+    max-width: 46ch;
+    margin: 1rem 0 2rem;
+    font-size: 1.1rem;
+    color: var(--muted);
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: var(--indigo);
+    color: var(--alice);
+    font-weight: 500;
+    border-radius: 5px;
+    transition: background 0.2s;
+}
+
+.btn:hover {
+    background: var(--indigo-deep);
+}
+
+
+/* ---------- DocuTrack Logo ---------- */
+
+.home-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.docutrack-logo {
+    width: 350px;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+
+/* ---------- Monitor Documents ---------- */
+
+.monitor-documents {
+    background: var(--lavender);
+}
+
+.monitor-documents p {
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+}
+
+.monitor-documents label {
+    display: inline-block;
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+}
+
+#tracking-id {
+    width: min(100%, 22rem);
+    padding: 0.75rem 1rem;
+    margin-right: 0.5rem;
+    margin-top: 0.25rem;
+    font: inherit;
+    color: var(--ink);
+    background: #fff;
+    border: 2px solid var(--line);
+    border-radius: 6px;
+}
+
+#tracking-id:focus {
+    border-color: var(--indigo);
+    outline: none;
+}
+
+#tracking-id:focus-visible {
+    box-shadow: 0 0 0 3px rgba(75, 0, 130, 0.25);
+}
+
+#search-btn {
+    margin-top: 0.25rem;
+    padding: 0.8rem 1.5rem;
+    font: inherit;
+    font-weight: 500;
+    color: var(--alice);
+    background: var(--indigo);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#search-btn:hover {
+    background: var(--indigo-deep);
+}
+
+#search-message {
+    min-height: 1.6em;
+    margin: 1rem 0 0;
+    color: var(--ink);
+}
+
+
+/* ---------- System Status ---------- */
+
+#status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.3rem 0.9rem;
+    font-weight: 500;
+    color: var(--online);
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+}
+
+#status::before {
+    content: "";
+    width: 0.6rem;
+    height: 0.6rem;
+    background: var(--online);
+    border-radius: 50%;
+}
+
+.notifications {
+    margin-top: 2rem;
+    padding-left: 1rem;
+    border-left: 4px solid var(--indigo);
+}
+
+.notifications h3 {
+    font-size: 1.15rem;
+    color: var(--indigo);
+}
+
+.notifications p {
+    color: var(--muted);
+}
+
+
+/* ---------- Counters ---------- */
+
+.submission-counts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1px;
+    margin: 2rem 0;
+    background: var(--line);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+.submission-status {
+    padding: 1.25rem 1.5rem;
+    background: #fff;
+}
+
+.submission-status h3 {
+    font-size: 2.25rem;
+    line-height: 1.1;
+    color: var(--indigo);
+    font-variant-numeric: tabular-nums;
+}
+
+.submission-status p {
+    color: var(--muted);
+}
+
+.submission-status:last-child {
+    background: var(--indigo);
+}
+
+.submission-status:last-child h3,
+.submission-status:last-child p {
+    color: var(--alice);
+}
+
+
+/* ---------- Daily Status Report ---------- */
+
+.daily-report {
+    margin-top: 2.5rem;
+    overflow-x: auto;
+}
+
+.daily-report table {
+    width: 100%;
+    min-width: 34rem;
+    border-collapse: collapse;
+    background: #fff;
+}
+
+.daily-report th,
+.daily-report td {
+    padding: 0.85rem 1rem;
+    text-align: left;
+}
+
+.daily-report th {
+    background: var(--lavender);
+    color: var(--ink);
+    font-weight: 600;
+}
+
+.daily-report td {
+    border-bottom: 1px solid var(--line);
+}
+
+.daily-report tbody tr:hover {
+    background: var(--alice);
+}
+
+.daily-report td[colspan] {
+    padding: 2rem 1rem;
+    text-align: center;
+    color: var(--muted);
+}
+
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 768px) {
+
+    #menu-icon {
+        display: block;
+    }
+
+    .navbar {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 0.5rem 5% 1rem;
+        background: var(--indigo-deep);
+    }
+
+    .navbar.active {
+        display: block;
+    }
+
+    .navbar a {
+        display: block;
+        margin: 1rem 0;
+        width: fit-content;
+    }
+
+    .home {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .docutrack-logo {
+        width: 280px;
+    }
+
+    #tracking-id {
+        margin-right: 0;
+    }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+}
